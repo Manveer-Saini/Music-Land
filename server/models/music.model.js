@@ -13,6 +13,10 @@ const AlbumSchema = new mongoose.Schema({
         type: String,
         minLength: [5, "A Album name must be at least five characters long!"]
     },
+    image: {
+        type: String,
+        required: [true, "Image URL required"]
+    },
     // enumeration will allow us to limit the answers to specific strings
     // test the enum w a previous assignment
     genre: {
