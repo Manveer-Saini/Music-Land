@@ -14,7 +14,7 @@ module.exports = {
             (err, payload)=>{
                 if(err){
                      //not a valid token or cookie doesn't exist
-                     res.status(401).json({verified:false})
+                    res.status(401).json({verified:false})
                 }
                 else{
                     //err is null, so verified

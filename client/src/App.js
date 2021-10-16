@@ -7,14 +7,15 @@ import Register from './components/Register';
 import CreateAlbum from './components/CreateAlbum';
 import Home from "./views/Home"
 
+
 function App() {
   return (
     <div className="App">
       <Router>
         <LogReg path="/" />
-        <Home path="/home" />
         <Login path="/Login" />
-        <CreateAlbum path="/album/new" />
+        <Home path="/home" />
+        <CreateAlbum path="/album/new"/>
       </Router>
     </div>
   );

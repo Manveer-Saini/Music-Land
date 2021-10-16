@@ -18,34 +18,33 @@ const CreateAlbum = (props)=>{
         genre: "",
         era: "",
         rating: "",
-        user_id: "",
-        createdByUserName: "",
+        // user_id: "",
+        // createdByUserName: "",
     });
 
     const newHandler = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8000/api/albums/new',
-        newAlbum
+        newAlbum,
+        {
+            withCredentials:true
+        }
         )
         .then((res) =>{
             console.log(res);
             console.log(res.data);
-            // setPetList([...petList, res.data]);
-            setNewAlbum({
-                bandName: "",
-                albumName: "",
-                genre: "",
-                era: "",
-                rating: "",
-                user_id: "",
-                createdByUserName: "",
-            });
-            navigate('/home');
+            navigate('/home')
         })
-        .catch((err)=>{
+        .catch((err) =>{
             console.log(err);
             console.log(err.response.data.errors);
-            setErrors(err.response.data.errors);
+            if(err.response.status === 401){
+                alert("your not logged in!")
+                navigate('/')
+            }
+            else if(err.response.data.errors){
+                setErrors(err.response.data.errors)
+            }
         })
     }
 
@@ -56,9 +55,8 @@ const CreateAlbum = (props)=>{
                 <Link to={'/home'}><button>Back to Home</button></Link>
             </div>
             <p><b>What is your favorite album?</b></p>
-            <div className="form">
+
                 <Form album={newAlbum} setAlbum={setNewAlbum} submitHandler={newHandler} buttonText="Add Album!" errors={errors}/>
-            </div>
             
         </div>
     )
