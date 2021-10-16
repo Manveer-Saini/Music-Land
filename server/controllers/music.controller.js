@@ -1,4 +1,4 @@
-const album = require("../models/album.model");
+const album = require("../models/music.model");
 const jwt = require('jsonwebtoken');
 
 

@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 require("./config/mongoose.config");
 
-require("./routes/album.routes")(app);
+require("./routes/music.routes")(app);
 require("./routes/user.routes")(app);
 
 app.listen(process.env.MY_PORT, () => 
