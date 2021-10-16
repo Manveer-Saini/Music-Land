@@ -4,6 +4,7 @@ import {Router} from "@reach/router";
 import Login from './components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Register from './components/Register';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <LogReg path="/" />
         <Login path="/Login" />
+        <Form path="/home"/>
       </Router>
     </div>
   );
