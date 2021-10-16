@@ -43,13 +43,13 @@ const Login = () => {
         <div>
             <div className="flex">
             <div className="flex_column1">
-            <video className="flex_column1_video" muted loop="true" autoPlay="true" >
-                <source src="./Videos/video1.mp4" type="video/mp4"/>
+            <video className="flex_column1_video" muted loop="true" autoPlay="true">
+                <source src="./Videos/front-page.mp4" type="video/mp4"/>
             </video>
             <div className="flex_column1_content">
                 <div className="flex_column1_content-text">
                     <h1>Welcome To</h1>
-                    <h1 className="text-center">Boutique</h1>
+                    <h1 className="text-center">Music Land</h1>
                 </div>  
             </div>
             </div>

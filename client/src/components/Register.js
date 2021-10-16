@@ -14,15 +14,11 @@ const Register = (props) => {
     const [confirmReg, setConfirmReg] = useState("");
     const [errs, setErrs] = useState({});
 
-    // CHECK THIS OUT!!!!
-    //    using a single state object to hold all data!
     const [user, setUser] = useState({
         firstName: "",
         lastName: "",
+        username: "",
         email: "",
-        address: "",
-        city: "",
-        state: "",
         password: "",
         confirmPassword: "",
     })
@@ -55,10 +51,8 @@ const Register = (props) => {
                 setUser({
                     firstName: "",
                     lastName: "",
+                    username: "",
                     email: "",
-                    address: "",
-                    city: "",
-                    state: "",
                     password: "",
                     confirmPassword: "",
                 })
@@ -77,20 +71,19 @@ const Register = (props) => {
             <div className="flex">
                 <div className="flex_column1">
                     <video className="flex_column1_video" muted loop="true" autoPlay="true" >
-                        <source src="./Videos/video1.mp4" type="video/mp4" />
+                        <source src="./Videos/front-page.mp4" type="video/mp4" />
                     </video>
                     <div className="flex_column1_content">
                         <div className="flex_column1_content-text">
-                            <h1>Welcome To</h1>
-                            <h1 className="text-center">Boutique</h1>
+                        <h1>Welcome To</h1>
+                        <h1 className="text-center">Music Land</h1>
                         </div>
                     </div>
                 </div>
                 <div className="flex_column2" style={{ backgroundImage: "url(/images/front-page.jpg)", backgroundSize: "cover", backgroundPosition: "center center" }}>
                     <div className="flex_column2_content">
                         <div className="flex_column2_content-text">
-                            <h1 className="text-center mb-3">Register For</h1>
-                            <h1 className="text-center">Boutique</h1>
+                            <h1 className="text-center mb-3">Start Sharing Your Favorite Music</h1>
                             <Row>
                                 <Col>
 
@@ -135,6 +128,22 @@ const Register = (props) => {
                                                 }
                                             </Form.Group>
                                         </Row>
+                                        <Form.Group>
+                                            <Form.Label>Username</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                name="username"
+                                                placeholder="Username"
+                                                value={user.username}
+                                                onChange={(e) => handleChange(e)}
+                                            />
+                                            <br />
+                                            {
+                                                errs.username ?
+                                                    <span className="error-text" style={{ color: "red" }}>{errs.username.message}</span>
+                                                    : null
+                                            }
+                                        </Form.Group>
 
                                         <Form.Group>
                                             <Form.Label>Email</Form.Label>
@@ -151,106 +160,6 @@ const Register = (props) => {
                                                 onChange={handleChange}
                                             />
                                         </Form.Group>
-                                        <Form.Group>
-                                            <Form.Label>Address</Form.Label>
-                                            <Form.Control
-                                                type="text"
-                                                name="address"
-                                                placeholder="Address"
-                                                value={user.address}
-                                                onChange={(e) => handleChange(e)}
-                                            />
-                                            <br />
-                                            {
-                                                errs.address ?
-                                                    <span className="error-text" style={{ color: "red" }}>{errs.address.message}</span>
-                                                    : null
-                                            }
-                                        </Form.Group>
-                                        <Row className="mb-3">
-                                            <Form.Group as={Col}>
-                                                <Form.Label>City</Form.Label>
-                                                <Form.Control
-                                                    type="text"
-                                                    name="city"
-                                                    placeholder="City"
-                                                    value={user.city}
-                                                    onChange={(e) => handleChange(e)}
-                                                />
-                                                <br />
-                                                {
-                                                    errs.city ?
-                                                        <span className="error-text" style={{ color: "red" }}>{errs.city.message}</span>
-                                                        : null
-                                                }
-                                            </Form.Group>
-                                            <Form.Group as={Col}>
-                                                <Form.Label htmlFor="state">State</Form.Label>
-                                                <Form.Select onChange={(e) => handleChange(e)} name="state" value={user.state}>
-                                                    <option value="AL" defaultValue hidden>
-                                                        AL
-                                                    </option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AK">AK</option>
-                                                    <option value="AR">AR</option>
-                                                    <option value="AZ">AZ</option>
-                                                    <option value="CA">CA</option>
-                                                    <option value="CO">CO</option>
-                                                    <option value="CT">CT</option>
-                                                    <option value="DC">DC</option>
-                                                    <option value="DE">DE</option>
-                                                    <option value="FL">FL</option>
-                                                    <option value="GA">GA</option>
-                                                    <option value="HI">HI</option>
-                                                    <option value="IA">IA</option>
-                                                    <option value="ID">ID</option>
-                                                    <option value="IL">IL</option>
-                                                    <option value="IN">IN</option>
-                                                    <option value="KS">KS</option>
-                                                    <option value="KY">KY</option>
-                                                    <option value="LA">LA</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MD">MD</option>
-                                                    <option value="ME">ME</option>
-                                                    <option value="MI">MI</option>
-                                                    <option value="MN">MN</option>
-                                                    <option value="MO">MO</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="NC">NC</option>
-                                                    <option value="NE">NE</option>
-                                                    <option value="NH">NH</option>
-                                                    <option value="NJ">NJ</option>
-                                                    <option value="NM">NM</option>
-                                                    <option value="NV">NV</option>
-                                                    <option value="NY">NY</option>
-                                                    <option value="ND">ND</option>
-                                                    <option value="OH">OH</option>
-                                                    <option value="OK">OK</option>
-                                                    <option value="OR">OR</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="RI">RI</option>
-                                                    <option value="SC">SC</option>
-                                                    <option value="SD">SD</option>
-                                                    <option value="TN">TN</option>
-                                                    <option value="TX">TX</option>
-                                                    <option value="UT">UT</option>
-                                                    <option value="VT">VT</option>
-                                                    <option value="VA">VA</option>
-                                                    <option value="WA">WA</option>
-                                                    <option value="WI">WI</option>
-                                                    <option value="WV">WV</option>
-                                                    <option value="WY">WY</option>
-                                                </Form.Select>
-                                                {
-                                                    errs.state ?
-                                                        //change to className error-text
-                                                        <span>{errs.state.message}</span>
-                                                        : null
-                                                }
-                                            </Form.Group>
-                                        </Row>
-
                                         <Form.Group>
                                             <Form.Label>Password</Form.Label>
                                             {
