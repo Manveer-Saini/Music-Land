@@ -1,33 +1,33 @@
-const Cartoon = require("../models/cartoon.model");
+const album = require("../models/album.model");
 const jwt = require('jsonwebtoken');
 
 
 module.exports = {
 
-    //get all documents from the "cartoons" collection 
-    //and return an array of "cartoon" documents (js objects)
+    //get all documents from the "albums" collection 
+    //and return an array of "album" documents (js objects)
 
-//get all documents from the "cartoons" collection and return an array of "cartoon" documents (js objects)
- findAllCartoons: (req,res)=>{
-    console.log("All the cartoons!");
+//get all documents from the "albums" collection and return an array of "album" documents (js objects)
+ findAllAlbums: (req,res)=>{
+    console.log("All the albums!");
     //use the model yto connect to the collection and find/return all documents
-    Cartoon.find({}) //find all documents. don't filter anything out
+    album.find({}) //find all documents. don't filter anything out
     .populate("user_id", "username")
-    .then((allCartoons) => {
-        res.json(allCartoons);
+    .then((allAlbums) => {
+        res.json(allAlbums);
     })
     .catch((err)=>{
-        console.log("Get all cartoons failed");
+        console.log("Get all albums failed");
         res.status(400).json(err);
     })
 },
 
-findAllCartoonsByUser: (req, res)=>{
+findAllAlbumsByUser: (req, res)=>{
 
-    Cartoon.find({user_id: req.params.id})
-    .then((allUserCartoons)=>{
-        console.log(allUserCartoons);
-        res.json(allUserCartoons);
+    album.find({user_id: req.params.id})
+    .then((allUserAlbums)=>{
+        console.log(allUserAlbums);
+        res.json(allUserAlbums);
     })
     .catch((err)=>{
         console.log(err);
@@ -35,58 +35,58 @@ findAllCartoonsByUser: (req, res)=>{
     })
 },
 
-findOneCartoon: (req, res)=>{
-    //id will come to us from the param/url/route call    /api/cartoons/:id
-    Cartoon.findOne({_id: req.params.id})            
-    .then((oneCartoon)=>res.json(oneCartoon))
+findOneAlbum: (req, res)=>{
+    //id will come to us from the param/url/route call    /api/albums/:id
+    album.findOne({_id: req.params.id})            
+    .then((oneAlbum)=>res.json(oneAlbum))
     .catch((err)=>{
-        console.log("Find one  cartoon failed");
+        console.log("Find one  album failed");
         res.status(400).json(err)  
     })
 },
 
-createNewCartoon: (req, res)=>{
-    const cartoon = new Cartoon(req.body);
+createNewAlbum: (req, res)=>{
+    const album = new album(req.body);
     const decodedJwt = jwt.decode(req.cookies.usertoken, {complete: true});
     //new obj needed in order to add that new user id (additional info outside of model)
     //decoded user_id is from model payload set-up
-    cartoon.user_id = decodedJwt.payload.user_id;
+    album.user_id = decodedJwt.payload.user_id;
     //the payload's key (from our user controller) need to match payload.username (key below)
-    cartoon.createdByUserName = decodedJwt.payload.username;
+    album.createdByUserName = decodedJwt.payload.username;
 
     console.log(decodedJwt.payload.user_id);
     console.log(decodedJwt.payload.username);
-    console.log(cartoon);
+    console.log(album);
 
-    Cartoon.create(cartoon)
-    .then((newCartoon)=>
-        res.json(newCartoon))
+    album.create(album)
+    .then((newAlbum)=>
+        res.json(newAlbum))
     .catch((err)=> {
-        console.log("Create cartoons failed");
+        console.log("Create albums failed");
         res.status(400).json(err)
     })
 },
 
-updateCartoon: (req, res) => {
-    Cartoon.findOneAndUpdate(
-        //id will come to us from the param/url/route call    /api/cartoons/:id
+updateAlbum: (req, res) => {
+    album.findOneAndUpdate(
+        //id will come to us from the param/url/route call    /api/albums/:id
         { _id: req.params.id },
         req.body,
         { new: true, runValidators: true }
     )
-        .then(updatedCartoon => res.json(updatedCartoon))
+        .then(updatedAlbum => res.json(updatedAlbum))
         .catch((err)=> {
-            console.log("Update cartoons failed");
+            console.log("Update albums failed");
             res.status(400).json(err)
         })
 },
 
-deleteCartoon: (req, res)=>{
-    //id will come to us from the param/url/route call    /api/cartoons/:id
-    Cartoon.deleteOne({_id: req.params.id})
-    .then((deletedCartoon)=>res.json(deletedCartoon))
+deleteAlbum: (req, res)=>{
+    //id will come to us from the param/url/route call    /api/albums/:id
+    album.deleteOne({_id: req.params.id})
+    .then((deletedAlbum)=>res.json(deletedAlbum))
     .catch((err)=> {
-        console.log("Delete cartoons failed");
+        console.log("Delete albums failed");
         res.status(400).json(err)
     })
 }
