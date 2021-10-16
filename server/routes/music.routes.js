@@ -7,7 +7,7 @@ const  { authenticate } = require("../config/jwt.config");
 module.exports = (app) => {
     app.get('/api/albums', albumController.findAllAlbums);
     //if data is being sent to my server to create something new, we use a POST request
-    app.post('/api/albums', authenticate, albumController.createNewAlbum);
+    app.post('/api/albums/new', authenticate, albumController.createNewAlbum);
     //put this above all of the paths with variable routes (:id here)
     app.get('/api/albums/user/:id', albumController.findAllAlbumsByUser);
     //Make sure this goes second (with the params) because it will search this one by default.
