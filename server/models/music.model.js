@@ -6,7 +6,6 @@ const AlbumSchema = new mongoose.Schema({
     bandName: {
         type: String,
         required: [true, "A band name is required!"],
-        minLength: [5, "A Band name must be at least five characters long!"],
     },
 
     albumName: {

@@ -1,4 +1,4 @@
-const album = require("../models/music.model");
+const Album = require("../models/music.model");
 const jwt = require('jsonwebtoken');
 
 
@@ -11,7 +11,7 @@ module.exports = {
  findAllAlbums: (req,res)=>{
     console.log("All the albums!");
     //use the model yto connect to the collection and find/return all documents
-    album.find({}) //find all documents. don't filter anything out
+    Album.find({}) //find all documents. don't filter anything out
     .populate("user_id", "username")
     .then((allAlbums) => {
         res.json(allAlbums);
@@ -24,7 +24,7 @@ module.exports = {
 
 findAllAlbumsByUser: (req, res)=>{
 
-    album.find({user_id: req.params.id})
+    Album.find({user_id: req.params.id})
     .then((allUserAlbums)=>{
         console.log(allUserAlbums);
         res.json(allUserAlbums);
@@ -37,7 +37,7 @@ findAllAlbumsByUser: (req, res)=>{
 
 findOneAlbum: (req, res)=>{
     //id will come to us from the param/url/route call    /api/albums/:id
-    album.findOne({_id: req.params.id})            
+    Album.findOne({_id: req.params.id})            
     .then((oneAlbum)=>res.json(oneAlbum))
     .catch((err)=>{
         console.log("Find one  album failed");
@@ -46,7 +46,7 @@ findOneAlbum: (req, res)=>{
 },
 
 createNewAlbum: (req, res)=>{
-    const album = new album(req.body);
+    const album = new Album(req.body);
     const decodedJwt = jwt.decode(req.cookies.usertoken, {complete: true});
     //new obj needed in order to add that new user id (additional info outside of model)
     //decoded user_id is from model payload set-up
@@ -58,7 +58,7 @@ createNewAlbum: (req, res)=>{
     console.log(decodedJwt.payload.username);
     console.log(album);
 
-    album.create(album)
+    Album.create(album)
     .then((newAlbum)=>
         res.json(newAlbum))
     .catch((err)=> {

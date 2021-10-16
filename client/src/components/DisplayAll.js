@@ -29,7 +29,7 @@ const DisplayAll = (props)=>{
         <div className="display">
             <div className="addpet">
                 <h1>Music Land</h1> 
-                <Link to={'/album/new'}><button>Add an Album!</button></Link> 
+                <Link to='/album/new'><button>Add an Album!</button></Link> 
             </div>
             <h3>What is your favorite album ever? Have multiple? Add them all!</h3>
             
@@ -51,13 +51,12 @@ const DisplayAll = (props)=>{
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr key={index}>
+                                <tr>
                                     <td>{album.bandName}</td>
                                     <td>{album.albumName}</td>
                                     <td>{album.genre}</td>
                                     <td>{album.era}</td>
                                     <td>{album.rating}</td>
-                                    <td>{album.user_id}</td>
                                     <td><Link to={`/album/edit/${album._id}`}><span>Edit</span></Link></td>
                                     <td><DeleteAlbum deleteFilter={deleteFilter} id={album._id}/></td>
                                 </tr>
