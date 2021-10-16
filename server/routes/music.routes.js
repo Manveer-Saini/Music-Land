@@ -1,4 +1,4 @@
-const albumController = require("../controllers/album.controller");
+const albumController = require("../controllers/music.controller");
 const  { authenticate } = require("../config/jwt.config");
 
 //we are exporting an arrow function with a parameter of app that contains five statements.
