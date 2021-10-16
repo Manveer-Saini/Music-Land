@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 const User = require("./user.model");
 
-const CartoonSchema = new mongoose.Schema({
+const AlbumSchema = new mongoose.Schema({
 
-    name: {
+    bandName: {
         type: String,
-        required: [true, "A cartoon name is required!"],
-        minLength: [5, "A cartoon name must be at least five characters long!"],
+        required: [true, "A band name is required!"],
+        minLength: [5, "A Band name must be at least five characters long!"],
     },
 
-    image: {
+    albumName: {
         type: String,
-        required: [true, "Because we love pictures, you must add one!"]
+        minLength: [5, "A Album name must be at least five characters long!"]
     },
     // enumeration will allow us to limit the answers to specific strings
     // test the enum w a previous assignment
@@ -19,20 +19,24 @@ const CartoonSchema = new mongoose.Schema({
         type: String,
         required: [true, "Cartoon genre required!!!"],
         enum: [
-            "Anime",
-            "Comedy",
-            "Drama",
-            "Action",
-            "Children",
-            "Mystery",
-            "Horror",
-            "Comic",
-            "Parody"
+            "Rock",
+            "Hip Hop/Rap",
+            "Pop",
+            "Jazz",
+            "Country",
+            "Folk",
+            "Blues",
+            "Heavy Metal",
+            "Classical",
+            "Electronic",
+            "Reggae",
+            "Soul",
+            "Disco"
         ]
     },
     era: {
         type: Number,
-        required: [true, "A cartoon era is required!"],
+        required: [true, "An Albums release date era is required!"],
         // enumeration will allow us to limit the answers to specific strings
         // test the enum w a previous assignment
         enum: [
@@ -52,13 +56,9 @@ const CartoonSchema = new mongoose.Schema({
     //this is optional because no required 
     rating: {
         type: Number,
-        min: [0, 'Needs to be more than 0!'],
-        max: [10, 'No more than 10!']
+        min: [0, 'Between 1 and 10'],
+        max: [10, 'Between 1 and 10']
     },
-    suitableForKids:{
-        type: Boolean
-    },
-
     user_id:{
         //in ref to User collection... obj Id gives us everything in that user
         type: mongoose.Schema.Types.ObjectId,
@@ -79,7 +79,7 @@ const CartoonSchema = new mongoose.Schema({
 //Model is a combination of the 1. collectionName and 2.Schema
 //Name will be collection name that's held in the db
 //schema is going to be the singular of what will show as plural in the db
-    const Cartoon = mongoose.model("Cartoon", CartoonSchema);
+    const Album = mongoose.model("Album", AlbumSchema);
 //This returns a cartoon model with the collection name and that schema
 
-module.exports = Cartoon;
+module.exports = Album;
