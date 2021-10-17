@@ -50,39 +50,6 @@ const DisplayAll = (props)=>{
                     ))
                 }
             </div>
-            {/* <table>
-            {
-                albumList?
-                    albumList.map((album, index)=>(
-                        <div key={index}>
-                            <thead>
-                                <tr>
-                                    <th>Band Name</th>
-                                    <th>Album Name</th>
-                                    <th>Genre</th>
-                                    <th>Era</th>
-                                    <th>Rating</th>
-                                    <th>Posted By:</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{album.bandName}</td>
-                                    <td>{album.albumName}</td>
-                                    <td>{album.genre}</td>
-                                    <td>{album.era}</td>
-                                    <td>{album.rating}</td>
-                                    <td><Link to={`/album/edit/${album._id}`}><span>Edit</span></Link></td>
-                                    <td><DeleteAlbum deleteFilter={deleteFilter} id={album._id}/></td>
-                                </tr>
-                            </tbody>
-                        </div>
-                    ))
-                :null
-            }
-            </table> */}
         </div>
     )
 }
