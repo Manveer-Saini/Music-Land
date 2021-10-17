@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import Form from './Form';
 import {Link, navigate} from '@reach/router';
+import Header from "./Header";
 
 
 
@@ -50,14 +51,12 @@ const CreateAlbum = (props)=>{
 
     return(
         <div>
-            <div>
+            <Header/>
+            <div className="flex">
                 <h1><u>Music Land</u></h1>
-                <Link to={'/home'}><button>Back to Home</button></Link>
             </div>
             <p><b>What is your favorite album?</b></p>
-
                 <Form album={newAlbum} setAlbum={setNewAlbum} submitHandler={newHandler} buttonText="Add Album!" errors={errors}/>
-            
         </div>
     )
 }
