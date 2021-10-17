@@ -8,6 +8,7 @@ import CreateAlbum from './components/CreateAlbum';
 import Home from "./views/Home"
 import Header from './components/Header';
 import EditAlbum from './components/EditAlbum';
+import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Home path="/home" />
         <CreateAlbum path="/album/new"/>
         <EditAlbum path="/album/edit/:id" />
+        <UserProfile path="user/profile/:id"/>
       </Router>
     </div>
   );

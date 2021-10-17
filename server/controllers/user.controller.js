@@ -101,6 +101,17 @@ module.exports = {
             console.log(err);
             res.status(400).json(err);
         })
+    },
+    getOneUser: (req, res)=>{
+        User.findOne({_id: req.params.id})
+        .then((oneUser)=>{
+            console.log(oneUser);
+            res.json(oneUser);
+        })    
+        .catch((err)=>{
+            console.log(err);
+            res.status(400).json(err);
+        })
     }
 }
 

@@ -48,6 +48,7 @@ const DisplayAll = (props)=>{
                             </Link>
 
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter}/>
+                            <Link to={`/user/profile/${album.user_id?._id}`}><p>Added By: {album.user_id?.username}</p></Link>
                         </div> 
                     ))
                 }
