@@ -32,7 +32,7 @@ const DisplayAll = (props)=>{
             <div className="">
                 <h1>Music Land</h1> 
             </div>
-            <h3>What is your favorite album ever? Have multiple? Add them all!</h3>
+            <h3>Please add your favorite Album(s)</h3>
             <div>
                 {
                     albumList.map((album, idx) => (
