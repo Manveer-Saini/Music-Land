@@ -5,9 +5,11 @@ import React, {useEffect, useState} from "react";
 const Form = (props) => {
     
     const {submitHandler, buttonText, album,  setAlbum, errors} = props;
-    
+    // console.log(album)
+    // console.log(album.bandName)
     const newChangeHandler = (e) => {
         let newStateObject = {...album};
+        console.log(album)
         newStateObject[e.target.name] = e.target.value;
         setAlbum(newStateObject);
     }
@@ -45,17 +47,17 @@ const Form = (props) => {
             <label htmlFor="era">Release Year:</label>
             <select onChange={newChangeHandler} name="era" value={album.era}>
                 <option value="none" defaultValue hidden>Select An era</option>
-                <option value ="1920">1920</option>
-                <option value ="1930">1930</option>
-                <option value ="1940">1940</option>
-                <option value ="1950">1950</option>
-                <option value ="1960">1960</option>
-                <option value ="1970">1970</option>
-                <option value ="1980">1980</option>
-                <option value ="1990">1990</option>
-                <option value ="2000">2000</option>
-                <option value ="2010">2010</option>
-                <option value ="2020">2020</option>
+                <option value ="1920">1920s</option>
+                <option value ="1930">1930s</option>
+                <option value ="1940">1940s</option>
+                <option value ="1950">1950s</option>
+                <option value ="1960">1960s</option>
+                <option value ="1970">1970s</option>
+                <option value ="1980">1980s</option>
+                <option value ="1990">1990s</option>
+                <option value ="2000">2000s</option>
+                <option value ="2010">2010s</option>
+                <option value ="2020">2020s</option>
             </select>
             {
                 errors.era?
