@@ -32,7 +32,7 @@ const DisplayAll = (props)=>{
             <div className="">
                 <h1>Music Land</h1> 
             </div>
-            <h3>What is your favorite album ever? Have multiple? Add them all!</h3>
+            <h3>Please add your favorite Album(s)</h3>
             <div>
                 {
                     albumList.map((album, idx) => (
@@ -48,6 +48,7 @@ const DisplayAll = (props)=>{
                             </Link>
 
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter}/>
+                            <Link to={`/user/profile/${album.user_id?._id}`}><p>Added By: {album.user_id?.username}</p></Link>
                         </div> 
                     ))
                 }

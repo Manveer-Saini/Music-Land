@@ -67,8 +67,9 @@ module.exports = {
             })
     },
 
+
     updateAlbum: (req, res) => {
-        album.findOneAndUpdate(
+        Album.findOneAndUpdate(
             //id will come to us from the param/url/route call    /api/albums/:id
             { _id: req.params.id },
             req.body,
@@ -90,6 +91,7 @@ module.exports = {
                 res.status(400).json(err)
             })
     }
+
 
 }
 
