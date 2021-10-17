@@ -46,8 +46,8 @@ const DisplayAll = (props)=>{
                             <Link to={`/album/edit/${album._id}`}>
                                 Edit
                             </Link>
-                            <br />
-                            <Link to={`/albums/${album._id}`}>Delete</Link>
+
+                            <DeleteAlbum id={album._id} deleteFilter={deleteFilter}/>
                         </div> 
                     ))
                 }
