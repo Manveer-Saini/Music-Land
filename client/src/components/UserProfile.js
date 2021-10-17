@@ -43,7 +43,9 @@ const UserProfile = (props) => {
                         <p>{album.era}</p>
                         <p>{album.genre}</p>
                         <p>{album.rating}</p>
+                        <Link to="/home">Home</Link>
                     </div>
+                
                 ))
             }
 
