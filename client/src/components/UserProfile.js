@@ -11,9 +11,7 @@ const UserProfile = (props) => {
         firstName: "",
         lastName: "",
         email: "",
-        address: "",
-        city: "",
-        state: "",
+        username: "",
 
     });
     const { id } = props;
