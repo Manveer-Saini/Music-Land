@@ -6,12 +6,15 @@ const AlbumSchema = new mongoose.Schema({
     bandName: {
         type: String,
         required: [true, "A band name is required!"],
-        minLength: [5, "A Band name must be at least five characters long!"],
     },
 
     albumName: {
         type: String,
         minLength: [5, "A Album name must be at least five characters long!"]
+    },
+    image: {
+        type: String,
+        required: [true, "Image URL required"]
     },
     // enumeration will allow us to limit the answers to specific strings
     // test the enum w a previous assignment

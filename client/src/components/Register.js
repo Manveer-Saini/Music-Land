@@ -86,7 +86,6 @@ const Register = (props) => {
                             <h1 className="text-center mb-3">Start Sharing Your Favorite Music</h1>
                             <Row>
                                 <Col>
-
                                     {
                                         confirmReg ?
                                             <h4 style={{ color: "green" }}>{confirmReg}</h4>
@@ -110,7 +109,6 @@ const Register = (props) => {
                                                         : null
                                                 }
                                             </Form.Group>
-
                                             <Form.Group as={Col}>
                                                 <Form.Label>Last Name</Form.Label>
                                                 <Form.Control
