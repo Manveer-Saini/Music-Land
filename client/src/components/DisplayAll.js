@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link} from '@reach/router';
 import axios from 'axios';
 import DeleteAlbum from "./DeleteAlbum";
+import Header from "./Header";
 
 
 
@@ -27,13 +28,29 @@ const DisplayAll = (props)=>{
 
     return(
         <div className="display">
-            <div className="addpet">
+            <Header/>
+            <div className="">
                 <h1>Music Land</h1> 
-                <Link to='/album/new'><button>Add an Album!</button></Link> 
             </div>
             <h3>What is your favorite album ever? Have multiple? Add them all!</h3>
-            
-            <table>
+            <div>
+                {
+                    albumList.map((album, idx) => (
+                        <div className="listItem" key={idx}>
+                            <Link to={`/album/${album._id}`}>
+                            <h2>Artist: {album.bandName}</h2>
+                            <h2>Album: {album.albumName}</h2>
+                            <img src={album.image} alt="album" style={{width:"200px", height:"200px"}}/>
+                            </Link>
+                            <br/>
+                            <Link to={`/album/edit/${album._id}`}>
+                                Edit
+                            </Link>
+                        </div> 
+                    ))
+                }
+            </div>
+            {/* <table>
             {
                 albumList?
                     albumList.map((album, index)=>(
@@ -65,7 +82,7 @@ const DisplayAll = (props)=>{
                     ))
                 :null
             }
-            </table>
+            </table> */}
         </div>
     )
 }

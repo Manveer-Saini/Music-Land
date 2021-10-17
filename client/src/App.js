@@ -6,13 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Register from './components/Register';
 import CreateAlbum from './components/CreateAlbum';
 import Home from "./views/Home"
+import Header from './components/Header';
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <LogReg path="/" />
+        <LogReg default/>
         <Login path="/Login" />
         <Home path="/home" />
         <CreateAlbum path="/album/new"/>

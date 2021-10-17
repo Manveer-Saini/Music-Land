@@ -76,12 +76,24 @@
 .link:hover{
     color: lightgray;
 }
-.nav{
+header{
+    border-bottom: 3px 
+    double lightgray;
+}
+h1{
+    font-size: 42px;
+    margin: 0px;
+    text-align: center;
+    padding: 20px 0px;
+}
+ul{
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    background-color: aliceblue;
-    border-bottom: 2px solid black;
+    list-style: none;
+}
+li{
+    font-size: 26px;
+    color: grey;
 }
 /* .background-home-page{
     width: 100%;
