@@ -68,7 +68,7 @@ createNewAlbum: (req, res)=>{
 },
 
 updateAlbum: (req, res) => {
-    album.findOneAndUpdate(
+    Album.findOneAndUpdate(
         //id will come to us from the param/url/route call    /api/albums/:id
         { _id: req.params.id },
         req.body,
@@ -83,13 +83,28 @@ updateAlbum: (req, res) => {
 
 deleteAlbum: (req, res)=>{
     //id will come to us from the param/url/route call    /api/albums/:id
-    album.deleteOne({_id: req.params.id})
+    Album.deleteOne({_id: req.params.id})
     .then((deletedAlbum)=>res.json(deletedAlbum))
     .catch((err)=> {
         console.log("Delete albums failed");
         res.status(400).json(err)
     })
-}
+},
+
+editAlbum: (req, res) =>{
+    Album.findByIdAndUpdate(
+        {_id: req.params._id},
+        req.body,
+        {
+        new:true,
+        runValidators: true
+        })
+        .then((updatedAlbum)=>res.json(updatedAlbum))
+        .catch((err)=>{
+            console.log("Update Album has failed.")
+            res.status(400).json(err)
+        })
+},
 
 }
 
