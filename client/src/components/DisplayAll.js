@@ -3,7 +3,7 @@ import {Link} from '@reach/router';
 import axios from 'axios';
 import DeleteAlbum from "./DeleteAlbum";
 import Header from "./Header";
-
+import musicland_lg from '../images/musicland_lg.jpg';
 
 
 const DisplayAll = (props)=>{
@@ -30,25 +30,29 @@ const DisplayAll = (props)=>{
         <div className="display">
             <Header/>
             <div className="">
-                <h1>Music Land</h1> 
+            <img src={musicland_lg} alt="logo"></img>    
             </div>
-            <h3>Please add your favorite Album(s)</h3>
-            <div>
+            <Link className="link" to="/album/new"><h3>Please add your favorite Album(s)</h3></Link>
+            <div style={{width: "70%", margin:"auto" ,display: "flex", flexDirection: "row", justifyContent: "flex start"}}>
                 {
                     albumList.map((album, idx) => (
-                        <div className="listItem" key={idx}>
+                        <div className="listItem" key={idx} style={{
+                            margin:"30px",
+                            width:"30%",
+                            height:"30%",
+                        }}>   
                             <Link to={`/album/${album._id}`}>
-                            <h2>Artist: {album.bandName}</h2>
-                            <h2>Album: {album.albumName}</h2>
+                            <h5>Artist: {album.bandName}</h5>
+                            <h5>Album: {album.albumName}</h5>
                             <img src={album.image} alt="album" style={{width:"200px", height:"200px"}}/>
                             </Link>
                             <br/>
-                            <Link to={`/album/edit/${album._id}`}>
-                                Edit
-                            </Link>
-
+                            <br/>
+                            <button type="button" class="btn btn-secondary"><Link to={`/album/edit/${album._id}`}>Edit</Link></button>
+                            &nbsp;&nbsp;&nbsp;
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter}/>
-                            <Link to={`/user/profile/${album.user_id?._id}`}><p>Added By: {album.user_id?.username}</p></Link>
+                            <br/>
+                            <span>Added By:</span><Link to={`/user/profile/${album.user_id?._id}`}> {album.user_id?.username}</Link>
                         </div> 
                     ))
                 }

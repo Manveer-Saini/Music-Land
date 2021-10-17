@@ -3,7 +3,7 @@ import axios from 'axios';
 import Form from './Form';
 import {Link, navigate} from '@reach/router';
 import Header from "./Header";
-
+import musicland_lg from '../images/musicland_lg.jpg';
 
 
 
@@ -52,11 +52,12 @@ const CreateAlbum = (props)=>{
     return(
         <div>
             <Header/>
-            <div className="flex">
-                <h1><u>Music Land</u></h1>
-            </div>
-            <p><b>What is your favorite album?</b></p>
+            <div style={{ width: "50%", margin: "auto", textAlign:"center"}}>
+            <img src={musicland_lg} alt="logo"></img>
+            <h4><b>What is your favorite album?</b></h4>
+            <br/>
                 <Form album={newAlbum} setAlbum={setNewAlbum} submitHandler={newHandler} buttonText="Add Album!" errors={errors}/>
+            </div>
         </div>
     )
 }

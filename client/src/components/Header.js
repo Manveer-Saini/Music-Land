@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
+import musicland_sm from '../images/musicland_sm.jpeg';
+
 const Header = (props) => {
 
     const logout = (e) => {
@@ -20,13 +22,16 @@ const Header = (props) => {
     };
 
     return (
-        <header>
-            <h1>Welcome To Music Land</h1>
-            <ul>
+        <header style={{ display:'flex', justifyContent:'space-around'}}> 
+            <img src={musicland_sm} alt="logo"></img>    
             
-                <li><Link className="link" to="/home">Home</Link></li>
-                <li><Link className="link" to="/album/new"> New Album</Link></li>
-                <li><button onClick={logout}>Logout</button></li>
+            <ul>
+                <li><Link className="link" to="/home">Home</Link></li> 
+                <br/>
+                <li><Link className="link" to="/album/new"> New Album</Link></li> 
+                <br/>
+                <br/>
+                <li><button onClick={logout} type="button" class="btn btn-dark">Logout</button></li>
             </ul>
         </header>
     )

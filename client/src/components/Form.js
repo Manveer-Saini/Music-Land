@@ -16,18 +16,18 @@ const Form = (props) => {
 
     return (
         <form onSubmit={submitHandler}>
-        <div>
-            <label htmlFor="">Band Name:</label>
-            <input onChange={newChangeHandler} name="bandName" type="text" value={album.bandName}/>
+        <div className="mb-3">
+            <label For="">Band Name:</label>
+            <input className="form-control" onChange={newChangeHandler} name="bandName" type="text" value={album.bandName}/>
             {
                 errors.bandName?
                 <span style={{color:"red"}}>{errors.bandName.message}</span>
                 :null
             }
         </div>
-        <div>
+        <div className="mb-3">
             <label htmlFor="albumName">Album Name:</label>
-            <input onChange={newChangeHandler} name="albumName" type="text" value={album.albumName}/>
+            <input className="form-control" onChange={newChangeHandler} name="albumName" type="text" value={album.albumName}/>
             {
                 errors.albumName?
                 <span style={{color:"red"}}>{errors.albumName.message}</span>
@@ -36,16 +36,16 @@ const Form = (props) => {
         </div>
         <div>
             <label htmlFor="image">Image URL:</label>
-            <input onChange={newChangeHandler} name="image" type="text" value={album.image}/>
+            <input className="form-control" onChange={newChangeHandler} name="image" type="text" value={album.image}/>
             {
                 errors.image?
                 <span style={{color:"red"}}>{errors.image.message}</span>
                 :null
             }
         </div>
-        <div>
+        <div className="mb-3">
             <label htmlFor="era">Release Year:</label>
-            <select onChange={newChangeHandler} name="era" value={album.era}>
+            <select className="form-select" onChange={newChangeHandler} name="era" value={album.era}>
                 <option value="none" defaultValue hidden>Select An era</option>
                 <option value ="1920">1920s</option>
                 <option value ="1930">1930s</option>
@@ -65,9 +65,9 @@ const Form = (props) => {
                 :null
             }
         </div>
-        <div>
+        <div className="mb-3">
             <label htmlFor="genre">Genre</label>
-            <select onChange={newChangeHandler} name="genre" value={album.genre}>
+            <select className="form-select" onChange={newChangeHandler} name="genre" value={album.genre}>
                 <option value="none" defaultValue hidden>
                     Select A Genre
                 </option>
@@ -91,9 +91,9 @@ const Form = (props) => {
                 :null
             }
         </div>
-        <div>
-            <label htmlFor="rating">Rating</label>
-            <input onChange={newChangeHandler} name="rating" type="number" value={album.rating}/>
+        <div className="mb-3">
+            <label className="form-label" htmlFor="rating">Rating 1-10</label>
+            <input onChange={newChangeHandler} name="rating" className ="form-range" type="range" value={album.rating}/>
             {
                 errors.rating?
                 <span style={{color:"red"}}>{errors.rating.message}</span>
@@ -118,7 +118,11 @@ const Form = (props) => {
                     :null
                 }
         </div> */}
-        <button>{buttonText}</button>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" >{buttonText}</button>
+        </div>
+        <br/>
+        <br/>
     </form>
     )
 }

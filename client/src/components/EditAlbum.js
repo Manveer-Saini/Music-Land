@@ -3,6 +3,7 @@ import {navigate} from '@reach/router';
 import axios from 'axios';
 import Form from './Form';
 import {Link} from '@reach/router';
+import Header from "./Header";
 
 
 
@@ -54,13 +55,10 @@ useEffect(()=>{
 
     return(
         <div>
-            <div>
-                <Link to={'/home'}><button>Back to Home</button></Link>
-            </div>
-            <div>
-                <h4>Edit "<u>{updatedAlbum.albumName}!"</u></h4>
-            </div>
-            <div>
+            <Header/>
+            <div style={{ width: "50%", margin: "auto", textAlign:"center"}}>
+            {/* <Link to={'/home'}><button>Back to Home</button></Link> */}
+            <h3>Edit "{updatedAlbum.albumName}!"</h3>
             <Form album={updatedAlbum} setAlbum={setUpdatedAlbum} buttonText="Edit Album" submitHandler={updateHandler} errors={errors} />
             </div>
             
