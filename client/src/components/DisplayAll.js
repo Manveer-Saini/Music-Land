@@ -24,8 +24,7 @@ const DisplayAll = (props)=>{
         let newList = albumList.filter((album)=> album._id !== id);
         setAlbumList(newList);
     }
-
-
+    
     return(
         <div className="display">
             <Header/>

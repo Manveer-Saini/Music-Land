@@ -145,18 +145,18 @@ const Register = (props) => {
 
                                         <Form.Group>
                                             <Form.Label>Email</Form.Label>
-                                            {
-                                                errs.email ?
-                                                    <span className="error-text" style={{ color: "red" }}>{errs.email.message}</span>
-                                                    : null
-                                            }
                                             <Form.Control
-                                                type="email"
+                                                type="text"
                                                 name="email"
                                                 placeholder="Email"
                                                 value={user.email}
                                                 onChange={handleChange}
                                             />
+                                            {
+                                                errs.email ?
+                                                    <span className="error-text" style={{ color: "red" }}>{errs.email.message}</span>
+                                                    : null
+                                            }
                                         </Form.Group>
                                         <Form.Group>
                                             <Form.Label>Password</Form.Label>

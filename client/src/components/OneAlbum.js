@@ -31,7 +31,6 @@ const OneAlbum = (props)=>{
                     <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Era:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>   {oneAlbum.era}</span></p>
                     <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Rating:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>  {oneAlbum.rating}</span></p>
                 </div>
-                
             </div>
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "15%", margin:"auto"}}>
                 <button class="btn btn-secondary" ><Link to={`/album/edit/${oneAlbum._id}`} style={{color:"white", textDecoration:"none"}}>Edit</Link></button>
