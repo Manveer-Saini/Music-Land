@@ -94,7 +94,8 @@ const Form = (props) => {
         <div className="mb-3">
             <label className="form-label" htmlFor="rating">Rating 1-10</label>
             {/* Add display for rating value */}
-            <input onChange={newChangeHandler} name="rating" className ="form-range" type="range" value={album.rating} min="0" max="10"/>
+            <input onChange={newChangeHandler} name="rating" id="rangeInput" className ="form-range" type="range" defaultValue="5" value={album.rating} min="0" max="10"/>
+            <output>{album.rating}</output>
             {
                 errors.rating?
                 <span style={{color:"red"}}>{errors.rating.message}</span>
