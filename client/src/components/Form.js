@@ -93,31 +93,14 @@ const Form = (props) => {
         </div>
         <div className="mb-3">
             <label className="form-label" htmlFor="rating">Rating 1-10</label>
-            <input onChange={newChangeHandler} name="rating" className ="form-range" type="range" value={album.rating}/>
+            {/* Add display for rating value */}
+            <input onChange={newChangeHandler} name="rating" className ="form-range" type="range" value={album.rating} min="0" max="10"/>
             {
                 errors.rating?
                 <span style={{color:"red"}}>{errors.rating.message}</span>
                 :null
             }
         </div>
-        {/* <div>
-            <label>User ID: </label>
-            <input onChange={newChangeHandler} name="userid" value={album.userid} type="mongoose.Schema.Types.ObjectId" />
-                {
-                    errors.userid ?
-                    <span style={{color:"red"}}>{errors.userid.message}</span>
-                    :null
-                }
-        </div>
-        <div>
-            <label>Created By: </label>
-            <input onChange={newChangeHandler} name="createdBy" value={album.createdBy} type="text" />
-                {
-                    errors.createdBy ?
-                    <span style={{color:"red"}}>{errors.createdBy.message}</span>
-                    :null
-                }
-        </div> */}
         <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-primary" >{buttonText}</button>
         </div>
