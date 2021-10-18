@@ -57,12 +57,11 @@ useEffect(()=>{
         <div>
             <Header/>
             <div style={{ width: "50%", margin: "auto", textAlign:"center"}}>
-            {/* <Link to={'/home'}><button>Back to Home</button></Link> */}
-            <h3>Edit "{updatedAlbum.albumName}!"</h3>
-            <img style={{width:"30%", borderRadius:"20px"}}src={updatedAlbum.image} alt="image" />
-            <Form album={updatedAlbum} setAlbum={setUpdatedAlbum} buttonText="Edit Album" submitHandler={updateHandler} errors={errors} />
+                {/* <Link to={'/home'}><button>Back to Home</button></Link> */}
+                <h3>Edit "{updatedAlbum.albumName}!"</h3>
+                <img style={{width:"30%", borderRadius:"20px"}}src={updatedAlbum.image} alt="image"/>
+                <Form album={updatedAlbum} setAlbum={setUpdatedAlbum} buttonText="Edit Album" submitHandler={updateHandler} errors={errors} />
             </div>
-            
         </div>
     )
 }
