@@ -26,21 +26,18 @@ const DisplayAll = (props)=>{
     }
     
     return(
-        <div className="display">
+        <div>
             <Header/>
-            <div className="">
-            <img src={musicland_lg} alt="logo"></img>    
+            <div className="front-page-video">
+                <video className="video" muted loop="true" autoPlay="true" >
+                        <source src="./Videos/dashboard.mp4" type="video/mp4" />
+                </video>   
             </div>
-            <Link className="link" to="/album/new"><h3>Please add your favorite Album(s)</h3></Link>
-            <div style={{width: "70%", margin:"auto" ,display: "flex", flexDirection: "row", justifyContent: "flex start"}}>
+            <div className="dashboard">
+                <Link className="link" to="/album/new"><h1>Please add your  favorite Album(s)</h1></Link>
                 {
                     albumList.map((album, idx) => (
-                        <div className="listItem" key={idx} style={{
-                            margin:"30px",
-                            width:"30%",
-                            height:"30%",
-                        }}>   
-                            
+                        <div className="dashboard-albums" key={idx} >
                             <h5 style={{fontSize:"28px"}}>{album.bandName}</h5>
                             <h5 style={{fontSize:"18px", fontStyle:"italic", color:"gray"}}>{album.albumName}</h5>
                             <Link to={`/album/${album._id}`}>
@@ -52,7 +49,7 @@ const DisplayAll = (props)=>{
                             &nbsp;&nbsp;&nbsp;
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter} />
                             <br/>
-                            <span>Added By:</span><Link to={`/user/profile/${album.user_id?._id}`} style={{textDecoration:"none"}}> {album.user_id?.username}</Link>
+                            <span>Added By:</span><Link className="link" to={`/user/profile/${album.user_id?._id}`} style={{textDecoration:"none"}}> {album.user_id?.username}</Link>
                         </div> 
                     ))
                 }

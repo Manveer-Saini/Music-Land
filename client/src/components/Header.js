@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
-import musicland_sm from '../images/musicland_sm.jpeg';
+import musicland_lg from '../images/musicland_lg.jpg';
 
 const Header = (props) => {
 
@@ -23,7 +23,7 @@ const Header = (props) => {
 
     return (
         <header style={{ display:'flex', justifyContent:'space-around'}}> 
-            <img src={musicland_sm} alt="logo"></img>    
+            <img src={musicland_lg} alt="logo"></img>    
             
             <ul>
                 <li><Link className="link" to="/home">Home</Link></li> 

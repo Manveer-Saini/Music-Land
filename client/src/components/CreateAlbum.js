@@ -52,7 +52,7 @@ const CreateAlbum = (props)=>{
     return(
         <div>
             <Header/>
-            <div style={{ width: "50%", margin: "auto", textAlign:"center"}}>
+            <div style={{ width: "25%", margin: "auto", textAlign:"center"}}>
             <img src={musicland_lg} alt="logo"></img>
             <h4><b>What is your favorite album?</b></h4>
             <br/>
