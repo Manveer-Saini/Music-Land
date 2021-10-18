@@ -57,7 +57,7 @@ const Login = () => {
                 <div className="flex_column2_content">
             <div className="flex_column2_content-text">
                 <h1 className="text-center mb-3">Welcome Back To</h1>
-                <h1 className="text-center">Boutique</h1>
+                <h1 className="text-center">Music Land</h1>
             <p className="error-text" style={{color:"red"}}>{errorMessage ? errorMessage : ""}</p>
 
             <Container>

@@ -29,7 +29,7 @@ const DeleteAlbum = (props) =>{
     }
 
     return(
-        <button onClick={deleteHandler}>Delete</button>
+        <button class="btn btn-danger" onClick={deleteHandler}>Delete</button>
     )
 }
 

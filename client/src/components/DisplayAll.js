@@ -41,16 +41,17 @@ const DisplayAll = (props)=>{
                             width:"30%",
                             height:"30%",
                         }}>   
+                            
+                            <h5 style={{fontSize:"28px"}}>{album.bandName}</h5>
+                            <h5 style={{fontSize:"18px", fontStyle:"italic", color:"gray"}}>{album.albumName}</h5>
                             <Link to={`/album/${album._id}`}>
-                            <h5>Artist: {album.bandName}</h5>
-                            <h5>Album: {album.albumName}</h5>
-                            <img src={album.image} alt="album" style={{width:"200px", height:"200px"}}/>
+                            <img src={album.image} alt="album" style={{width:"200px", height:"200px", borderRadius:"20px"}}/>
                             </Link>
                             <br/>
                             <br/>
-                            <button type="button" class="btn btn-secondary"><Link to={`/album/edit/${album._id}`}>Edit</Link></button>
+                            <button type="button" class="btn btn-secondary"><Link to={`/album/edit/${album._id}`}  style={{color:"white", textDecoration:"none"}}>Edit</Link></button>
                             &nbsp;&nbsp;&nbsp;
-                            <DeleteAlbum id={album._id} deleteFilter={deleteFilter}/>
+                            <DeleteAlbum id={album._id} deleteFilter={deleteFilter} />
                             <br/>
                             <span>Added By:</span><Link to={`/user/profile/${album.user_id?._id}`}> {album.user_id?.username}</Link>
                         </div> 
