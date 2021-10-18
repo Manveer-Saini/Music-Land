@@ -57,13 +57,17 @@ const UserProfile = (props) => {
                                 margin:"30px",
                                 width:"30%",
                                 height:"30%",}}>
-                                <p>{album.bandName}</p>
-                                <Link to={`/album/edit/${album._id}`}>
-                                <img style={{ width:"29%", height:"29%", borderRadius:"10px"}} src={album.image} alt="image" />
-                                </Link>
-                                <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Era: <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.era}</span></p>
-                                <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Genre:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.genre}</span></p>
-                                <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Your Rating:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.rating}</span></p>
+                                <p style={{fontSize:"20px", fontWeight:"600", fontStyle:"italic"}}>{album.bandName}</p>
+                                
+                                <div style={{border:"1px solid black", borderRadius:"10px"}}>
+                                    <Link to={`/album/edit/${album._id}`}>
+                                    <img style={{ width:"50%", height:"50%", borderRadius:"10px", marginTop:"3%"}} src={album.image} alt="image" />
+                                    </Link>
+                                    <p style={{fontSize:"15px", fontWeight:"600", fontStyle:"italic"}}>{album.albumName}</p>
+                                    <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Era: <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.era}</span></p>
+                                    <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Genre:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.genre}</span></p>
+                                    <p style={{fontSize:"20px", fontWeight:"500", marginLeft:"2%"}}>Your Rating:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>{album.rating}</span></p>
+                                </div>
                             </div>
                         
                         ))

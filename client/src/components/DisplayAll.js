@@ -53,7 +53,7 @@ const DisplayAll = (props)=>{
                             &nbsp;&nbsp;&nbsp;
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter} />
                             <br/>
-                            <span>Added By:</span><Link to={`/user/profile/${album.user_id?._id}`}> {album.user_id?.username}</Link>
+                            <span>Added By:</span><Link to={`/user/profile/${album.user_id?._id}`} style={{textDecoration:"none"}}> {album.user_id?.username}</Link>
                         </div> 
                     ))
                 }
