@@ -23,13 +23,13 @@ const OneAlbum = (props)=>{
         <div style={{margin:"auto" ,display: "flex", flexDirection: "column", justifyContent: "center"}}>
             <Header />
             <div style={{display:"flex", flexDirection:"column",justifyContent: "center", marginLeft:"43%"}}>
-                <p style={{fontSize:"28px", fontWeight:"500"}}>{oneAlbum.bandName}</p>
+                <p style={{fontSize:"2.2vw", fontWeight:"500"}}>{oneAlbum.bandName}</p>
                 <img style={{width:"30%", borderRadius:"20px"}}src={oneAlbum.image} alt="image" />
                 <div style={{border:"1px solid black", borderRadius:"20px", width:"33%", marginTop:"2%", marginBottom:"2%"}}>
-                    <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Album:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>   "{oneAlbum.albumName}"</span></p>
-                    <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Genre:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>   {oneAlbum.genre}</span></p>
-                    <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Era:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>   {oneAlbum.era}</span></p>
-                    <p style={{fontSize:"20px", fontWeight:"400", marginLeft:"2%"}}>Rating:  <span style={{fontSize:"17px", color:"gray", textDecoration:"underline"}}>  {oneAlbum.rating}</span></p>
+                    <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Album:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   "{oneAlbum.albumName}"</span></p>
+                    <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Genre:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   {oneAlbum.genre}</span></p>
+                    <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Era:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   {oneAlbum.era}</span></p>
+                    <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Rating:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>  {oneAlbum.rating}</span></p>
                 </div>
                 
             </div>
