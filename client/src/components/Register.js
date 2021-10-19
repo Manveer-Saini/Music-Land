@@ -70,10 +70,8 @@ const Register = (props) => {
         <div>
             <div className="flex">
                 <div className="flex_column1">
-
                     <video className="flex_column1_video" muted loop={true} autoPlay={true} >
                         <source src="./videos/front-page.mp4" type="video/mp4" />
-
                     </video>
                     <div className="flex_column1_content">
                         <div className="flex_column1_content-text">
@@ -162,11 +160,6 @@ const Register = (props) => {
                                         </Form.Group>
                                         <Form.Group>
                                             <Form.Label>Password</Form.Label>
-                                            {
-                                                errs.password ?
-                                                    <span className="error-text" style={{ color: "red" }}>{errs.password.message}</span>
-                                                    : null
-                                            }
                                             <Form.Control
                                                 type="password"
                                                 name="password"
@@ -174,6 +167,11 @@ const Register = (props) => {
                                                 value={user.password}
                                                 onChange={handleChange}
                                             />
+                                            {
+                                                errs.password ?
+                                                    <span className="error-text" style={{ color: "red" }}>{errs.password.message}</span>
+                                                    : null
+                                            }
                                         </Form.Group>
                                         <Form.Group>
                                             <Form.Label>Confirm Password</Form.Label>

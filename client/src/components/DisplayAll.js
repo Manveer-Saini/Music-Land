@@ -45,7 +45,9 @@ const DisplayAll = (props)=>{
                             </Link>
                             <br/>
                             <br/>
-                            <button type="button" class="btn btn-secondary"><Link to={`/album/edit/${album._id}`}  style={{color:"white", textDecoration:"none"}}>Edit</Link></button>
+                            <button className="single-album-button">
+                            <Link style={{textDecoration:"none", color:"black"}} to={`/album/edit/${album._id}`}>Edit</Link>
+                            </button>
                             &nbsp;&nbsp;&nbsp;
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter} />
                             <br/>

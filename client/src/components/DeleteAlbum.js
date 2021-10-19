@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {navigate} from '@reach/router';
+import {navigate, Link} from '@reach/router';
 
 
 
@@ -29,7 +29,7 @@ const DeleteAlbum = (props) =>{
     }
 
     return(
-        <button class="btn btn-danger" onClick={deleteHandler}>Delete</button>
+        <button className="single-album-button" onClick={deleteHandler}>Delete</button>
     )
 }
 
