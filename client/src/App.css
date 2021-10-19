@@ -162,7 +162,6 @@ input, select, input[type="text"], input[type="password"]{
     width: 40vh;
     border-radius: 20px;
 }
-
 .single-album-button{
     top: 110%;
     left: 32%;
@@ -176,4 +175,9 @@ input, select, input[type="text"], input[type="password"]{
     padding: 10px;
     box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.287);
     margin: 7px 3px;
+}
+}
+.UserWrapper {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
+    padding-bottom: 8%;
 }
