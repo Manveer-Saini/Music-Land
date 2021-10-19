@@ -132,7 +132,7 @@ input, select, input[type="text"], input[type="password"]{
 }
 .displayBack {
     margin-bottom:0px;
-    margin-top:-11.1vh;
+    margin-top:-10vh;
     padding-top:1vh;
     font-style:italic;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
