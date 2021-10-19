@@ -45,11 +45,19 @@ const DisplayAll = (props)=>{
                             </Link>
                             <br/>
                             <br/>
+                            {
+                                localStorage.getItem("userId") === album.user_id._id?
                             <button className="single-album-button">
                             <Link style={{textDecoration:"none", color:"black"}} to={`/album/edit/${album._id}`}>Edit</Link>
                             </button>
+                                :null
+                            }
                             &nbsp;&nbsp;&nbsp;
+                            {
+                                localStorage.getItem("userId") === album.user_id._id?
                             <DeleteAlbum id={album._id} deleteFilter={deleteFilter} />
+                            :null
+                            }
                             <br/>
                             <span>Added By:</span><Link className="link" to={`/user/profile/${album.user_id?._id}`} style={{textDecoration:"none"}}> {album.user_id?.username}</Link>
                         </div> 

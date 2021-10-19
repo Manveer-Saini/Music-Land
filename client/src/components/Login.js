@@ -31,6 +31,8 @@ const Login = () => {
             console.log(res.cookie, "cookie");
             console.log(res, "res");
             console.log(res.data, 'is res data!');
+            localStorage.setItem("currentUsername", res.data.userLoggedIn);
+            localStorage.setItem("userId", res.data.userId); 
             navigate("/home");
         })
         .catch(err => {
