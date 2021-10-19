@@ -103,8 +103,9 @@ li{
 label{
     display: block;
     /* width: 725px; */
-    font-family: 'Architects Daughter', cursive;
-    font-size: 20px;
+    font-family: 'Festive', cursive;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 30px;
 }
 input, select, input[type="text"], input[type="password"]{
     align-items: center;
