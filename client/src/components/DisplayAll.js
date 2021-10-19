@@ -30,7 +30,7 @@ const DisplayAll = (props)=>{
             <Header/>
             <div className="front-page-video">
                 <video className="video" muted loop="true" autoPlay="true" >
-                        <source src="./Videos/dashboard.mp4" type="video/mp4" />
+                        <source src="./videos/dashboard.mp4" type="video/mp4" />
                 </video>   
             </div>
             <div className="dashboard">
