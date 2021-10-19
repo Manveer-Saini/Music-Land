@@ -19,11 +19,12 @@ const OneAlbum = (props)=>{
     }, [])
 
     return(
-
-        <div style={{margin:"auto" ,display: "flex", flexDirection: "column", justifyContent: "center"}}>
+        <div>
             <Header />
-            <div style={{display:"flex", flexDirection:"column",justifyContent: "center", marginLeft:"43%"}}>
-                <p style={{fontSize:"2.2vw", fontWeight:"500"}}>{oneAlbum.bandName}</p>
+
+        <div className="one-album">
+            <div>
+                <h1>{oneAlbum.bandName}</h1>
                 <img style={{width:"30%", borderRadius:"20px"}}src={oneAlbum.image} alt="image" />
                 <div style={{border:"1px solid black", borderRadius:"20px", width:"33%", marginTop:"2%", marginBottom:"2%"}}>
                     <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Album:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   "{oneAlbum.albumName}"</span></p>
@@ -40,6 +41,7 @@ const OneAlbum = (props)=>{
             
             
     
+        </div>
         </div>
     )
 }
