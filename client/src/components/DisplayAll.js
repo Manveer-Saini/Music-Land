@@ -33,8 +33,8 @@ const DisplayAll = (props)=>{
                         <source src="./Videos/dashboard.mp4" type="video/mp4" />
                 </video>   
             </div>
+            <h1>Check Out Are Most Recent Entries!</h1>
             <div className="dashboard">
-                <Link className="link" to="/album/new"><h1>Please add your  favorite Album(s)</h1></Link>
                 {
                     albumList.map((album, idx) => (
                         <div className="dashboard-albums" key={idx} >

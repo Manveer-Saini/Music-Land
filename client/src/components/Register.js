@@ -71,7 +71,7 @@ const Register = (props) => {
             <div className="flex">
                 <div className="flex_column1">
                     <video className="flex_column1_video" muted loop="true" autoPlay="true" >
-                        <source src="./Videos/front-page.mp4" type="video/mp4" />
+                        <source src="./videos/front-page.mp4" type="video/mp4"/>
                     </video>
                     <div className="flex_column1_content">
                         <div className="flex_column1_content-text">
