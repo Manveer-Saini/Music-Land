@@ -121,11 +121,21 @@ input, select, input[type="text"], input[type="password"]{
 .video{
     height: 80vh;
     width: 100vh;
+    margin-top:-12vh;
+    
 }
 .front-page-video{
-    height: 80vh;
+    height: 75vh;
     background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171));
     margin-bottom: 100px;
+    padding-bottom: 10vh;    
+}
+.displayBack {
+    margin-bottom:0px;
+    margin-top:-11.1vh;
+    padding-top:1vh;
+    font-style:italic;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
 }
 .dashboard{
     /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
@@ -140,7 +150,8 @@ input, select, input[type="text"], input[type="password"]{
 .dashboard-albums{
     margin: 30px;
     width: 30%;
-    height: 45vh;
+    height: 46vh;
+    padding-top:5px;
     /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     border-radius: 20px;
@@ -173,12 +184,13 @@ input, select, input[type="text"], input[type="password"]{
     font-size: 20px;
     width: 200px;
     border-radius: 4px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.287);
-    margin: 7px 3px;
+    margin: 2px 3px;
 }
 
 .UserWrapper {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     padding-bottom: 8%;
 }
+

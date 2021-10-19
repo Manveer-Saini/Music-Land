@@ -29,11 +29,15 @@ const DisplayAll = (props)=>{
         <div>
             <Header/>
             <div className="front-page-video">
+                <p style={{fontStyle:"italic", fontFamily:"-moz-initial", paddingTop:"0%", fontSize:"6vh"}}>What Album Makes You Dance?</p>
                 <video className="video" muted loop="true" autoPlay="true" >
                         <source src="./videos/dashboard.mp4" type="video/mp4" />
-                </video>   
+                </video>
+                {/* <p>What makes you want to turn up the music and sing?</p> 
+                <p>Click <span>New Album</span> above to let us know!</p>   */}
+                
             </div>
-            <h1>Check Out Are Most Recent Entries!</h1>
+            <h1 className="displayBack">Check Out Our Most Recent Entries!</h1>
             <div className="dashboard">
                 {
                     albumList.map((album, idx) => (
@@ -41,10 +45,9 @@ const DisplayAll = (props)=>{
                             <h5 style={{fontSize:"28px"}}>{album.bandName}</h5>
                             <h5 style={{fontSize:"18px", fontStyle:"italic", color:"gray"}}>{album.albumName}</h5>
                             <Link to={`/album/${album._id}`}>
-                            <img src={album.image} alt="album" style={{width:"200px", height:"200px", borderRadius:"20px"}}/>
+                            <img src={album.image} alt="album" style={{width:"200px", height:"200px", borderRadius:"10%"}}/>
                             </Link>
-                            <br/>
-                            <br/>
+                            <p><b><u>Rated at:</u></b> <span style={{fontSize:"3vh", color:"gray"}}>{album.rating}/10</span></p>
                             {
                                 localStorage.getItem("userId") === album.user_id._id?
                             <button className="single-album-button">
