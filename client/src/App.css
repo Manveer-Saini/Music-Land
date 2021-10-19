@@ -14,7 +14,7 @@
     .flex_column1, .flex_column2{
         position: relative;
         width: 50%;
-        height: 100vh;
+        height: 110vh;
         background-color: rgb(69, 98, 124);
         @media screen and (max-width: 800px) {
         width: 100%;
@@ -25,7 +25,7 @@
         .flex_column1_video{
         position: relative;
         height: 100vh;
-        width: 100vh;
+        width: 100%;
         object-fit: cover;
         -webkit-object-fit:cover;
         @media screen and (max-width: 800px) {
@@ -50,7 +50,7 @@
         .flex_column2_content{
         position: absolute;
         width: 600px;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-image: linear-gradient(to right, rgba(0,0,0,0.171), rgba(0,0,0,0.171));
@@ -110,8 +110,8 @@ input, select, input[type="text"], input[type="password"]{
     align-items: center;
     width: 400px;
     font-family: 'Architects Daughter', cursive;
-    font-size: 25px;
-    margin: 10px auto;
+    font-size: 15px;
+    margin: 5px auto;
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
