@@ -118,8 +118,8 @@ input, select, input[type="text"], input[type="password"]{
     box-shadow: 0 1rem 2rem rgba(8, 7, 7, 0.287);
 }
 .video{
-    height: 800px;
-    width: 1000px;
+    height: 80vh;
+    width: 100vh;
 }
 .front-page-video{
     height: 80vh;
@@ -130,6 +130,7 @@ input, select, input[type="text"], input[type="password"]{
     /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     margin: auto; 
+    height: 100vh;
     display: flex;
     flex-direction: row; 
     flex-wrap: wrap;
@@ -138,21 +139,43 @@ input, select, input[type="text"], input[type="password"]{
 .dashboard-albums{
     margin: 30px;
     width: 30%;
-    height: 30%;
+    height: 45vh;
     /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     border-radius: 20px;
     box-shadow: 0 1rem 2rem rgba(8, 7, 7, 0.287);
 }
-.one-album-pic{
-    width: 300;
-}
 .one-album{
+    /* margin-top: 20px; */
+    padding: 20px;
     display: flex;
     margin: auto;
+    flex-direction: row; 
+    flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid black;
     width: 100vh;
+    border-radius: 10%;
+    background-image: linear-gradient(to right, rgba(100, 44, 44, 0.171), rgba(63, 27, 27, 0.171));
+    box-shadow: 0 1rem 2rem rgba(8, 7, 7, 0.287);
+}
+.one-album-pic{
+    width: 40vh;
+    border-radius: 20px;
+}
+.single-album-button{
+    top: 110%;
+    left: 32%;
+    border: 1px solid rgb(233, 214, 214);
+    color: black;
+    text-decoration: none;
+    font-weight:700;
+    font-size: 20px;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.287);
+    margin: 7px 3px;
+}
 }
 .UserWrapper {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
