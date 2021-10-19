@@ -154,3 +154,7 @@ input, select, input[type="text"], input[type="password"]{
     border: 2px solid black;
     width: 100vh;
 }
+.UserWrapper {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
+    padding-bottom: 8%;
+}

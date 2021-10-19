@@ -34,11 +34,12 @@ const UserProfile = (props) => {
     return (
         <div>
             <Header/>
-            <h1>Welcome to {userPage.username}'s Profile!</h1>
-            <div style={{textAlign:"center", width: "90%", margin:"auto" ,display: "flex", flexDirection: "row"}}>
-                <div style={{textAlign:"center", width: "40%", margin:"auto"}}>
+            <div className="UserWrapper">
+            <h1 style={{paddingTop:"2%"}}>Welcome to {userPage.username}'s Profile!</h1>
+            <div style={{textAlign:"center", width: "90%", margin:"auto" ,display: "flex", flexDirection: "row", verticalAlign:"top"}}>
+                <div style={{textAlign:"center", width: "40%", margin:"auto", border:"1px solid black", background: "black", color: "white", borderRadius:"15px"}}>
                     <h3> User Profile</h3>
-                    <table className="table table-stripe">
+                    <table className="table table-dark">
                         <tbody>
                         <tr><td>First Name:</td> <td>{userPage.firstName} </td></tr>
                         <tr><td>Last Name:</td> <td>{userPage.lastName}</td></tr>
@@ -48,9 +49,9 @@ const UserProfile = (props) => {
 
 
                 </div>
-                <div style={{textAlign:"center", width: "60%", margin:"auto"}}>
-                    <h3>Your favorite albums: </h3>
-                    <div style={{textAlign:"center", width: "70%", margin:"auto" ,display: "flex", flexDirection: "row", justifyContent: "flex start"}}>
+                <div style={{textAlign:"center", width: "60%", margin:"auto", border: "3px Solid Black", borderRadius:"5%", margin:"2%", background:"lightgray"}}>
+                    <h3 style={{marginTop:"1%", fontWeight:"600", fontStyle:"italic", fontSize:"36px"}}>Your favorite albums: </h3>
+                    <div style={{textAlign:"center", width: "85%", height:"90%", margin:"auto" ,display: "flex", flexDirection: "row", justifyContent: "flex start", verticalAlign:"top"}}>
                     {
                         userAlbumList.map((album, index)=>(
                             <div key={index} style={{
@@ -75,6 +76,8 @@ const UserProfile = (props) => {
                     </div>
                 </div>
             </div>
+            </div>
+            
         </div>
     )
 
