@@ -33,10 +33,17 @@ const OneAlbum = (props)=>{
                     <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Genre:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   {oneAlbum.genre}</span></p>
                     <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Era:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>   {oneAlbum.era}</span></p>
                     <p style={{fontSize:"1vw", fontWeight:"400", marginLeft:"2%"}}>Rating:  <span style={{fontSize:".9vw", color:"gray", textDecoration:"underline"}}>  {oneAlbum.rating}</span></p>
-                    <button className="single-album-button">
-                        <Link style={{textDecoration:"none", color:"black"}} to={`/album/edit/${oneAlbum._id}`}>Edit</Link>
-                    </button>
-                    <DeleteAlbum id={oneAlbum._id}/>
+                    {
+                        localStorage.getItem("userId") === oneAlbum.user_id ?
+                        <button className="single-album-button">
+                            <Link style={{textDecoration:"none", color:"black"}} to={`/album/edit/${oneAlbum._id}`}>Edit</Link>
+                        </button>: null
+                    }
+                    {
+                        localStorage.getItem("userId") === oneAlbum.user_id ?
+                        <DeleteAlbum id={oneAlbum._id}/> 
+                        : null
+                    }
                 </div>
             </div>    
         </div>
