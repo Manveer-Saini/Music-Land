@@ -52,11 +52,13 @@ const CreateAlbum = (props)=>{
     return(
         <div>
             <Header/>
-            <div style={{ width: "25%", margin: "auto", textAlign:"center"}}>
+            <div className="dashboard">
+                <div className="edit-album">
             <img src={musicland_lg} alt="logo"></img>
             <h4><b>What is your favorite album?</b></h4>
             <br/>
                 <Form album={newAlbum} setAlbum={setNewAlbum} submitHandler={newHandler} buttonText="Add Album!" errors={errors}/>
+            </div>
             </div>
         </div>
     )
