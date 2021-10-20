@@ -97,7 +97,6 @@ li{
 }
 label{
     display: block;
-    /* width: 725px; */
     font-size: 30px;
 }
 input, select, input[type="text"], input[type="password"]{
@@ -130,7 +129,6 @@ input, select, input[type="text"], input[type="password"]{
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
 }
 .dashboard{
-    /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     margin: auto; 
     height: 100%;
@@ -144,13 +142,11 @@ input, select, input[type="text"], input[type="password"]{
     width: 30%;
     height: 60%;
     padding-top:5px;
-    /* background-image: linear-gradient(to right, rgba(70, 27, 27, 0.452), rgba(194, 85, 85, 0.171)); */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.171), rgba(149, 147, 147, 0.171));
     border-radius: 20px;
     box-shadow: 0 1rem 2rem rgba(8, 7, 7, 0.287);
 }
 .one-album{
-    /* margin-top: 20px; */
     padding: 20px;
     display: flex;
     margin: auto;
@@ -163,7 +159,6 @@ input, select, input[type="text"], input[type="password"]{
     box-shadow: 0 1rem 2rem rgba(8, 7, 7, 0.287);
 }
 .edit-album{
-    /* margin-top: 20px; */
     padding: 20px;
     margin: auto;
     justify-content: center;
@@ -190,7 +185,6 @@ input, select, input[type="text"], input[type="password"]{
     text-decoration: none;
     font-weight:700;
     font-size: 20px;
-    /* width: 20%; */
     border-radius: 4px;
     padding: 5px;
     box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.287);
